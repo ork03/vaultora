@@ -15,7 +15,7 @@ The frontend and API share one Render URL, so API calls use `/api` and the HttpO
 1. Create a free Atlas cluster in a region close to your Render region.
 2. Create a database user with a strong generated password.
 3. In Atlas Network Access, allow Render to reach the cluster. For a hobby deployment this might require temporary `0.0.0.0/0` access; use a stricter network policy when available.
-4. Copy the SRV connection string and replace its password. It becomes the `MONGODB_URI` secret in Render.
+4. Copy the SRV connection string and replace its password. It becomes the `MONGODB_URI` secret in Render. Include `/vaultora` before the query string, for example `mongodb+srv://USER:PASSWORD@CLUSTER.mongodb.net/vaultora?retryWrites=true&w=majority`.
 
 ## 2. Push this repository to GitHub
 
