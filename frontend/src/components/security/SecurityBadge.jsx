@@ -1,0 +1,1 @@
+import {Chip} from '@mui/material'; import LockRounded from '@mui/icons-material/LockRounded'; export default function SecurityBadge(){return <Chip icon={<LockRounded/>} label="Zero-knowledge encryption" size="small" variant="outlined"/>}

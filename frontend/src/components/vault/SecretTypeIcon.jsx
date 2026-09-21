@@ -1,0 +1,1 @@
+import KeyRounded from '@mui/icons-material/KeyRounded'; import NotesRounded from '@mui/icons-material/NotesRounded'; export default function SecretTypeIcon({type}){return type==='secureNote'?<NotesRounded/>:<KeyRounded/>}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d14" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Vaultora</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        const local = ["localhost", "127.0.0.1", "::1"].includes(
+          location.hostname,
+        );
+        if (local) {
+          navigator.serviceWorker
+            .getRegistrations()
+            .then((rs) => Promise.all(rs.map((r) => r.unregister())))
+            .then(() => caches.keys())
+            .then((keys) =>
+              Promise.all(
+                keys
+                  .filter((k) => k.startsWith("vaultora-"))
+                  .map((k) => caches.delete(k)),
+              ),
+            );
+        } else {
+          navigator.serviceWorker.register("/sw.js");
+        }
+      }
+    </script>
+  </body>
+</html>

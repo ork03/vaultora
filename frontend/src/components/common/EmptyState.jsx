@@ -1,0 +1,1 @@
+import {Stack,Typography} from '@mui/material'; export default function EmptyState({title,text}){return <Stack alignItems="center" spacing={1} sx={{py:10,textAlign:'center'}}><Typography variant="h5">{title}</Typography><Typography color="text.secondary">{text}</Typography></Stack>}

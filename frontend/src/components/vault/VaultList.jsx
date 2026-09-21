@@ -1,0 +1,1 @@
+import {Stack} from '@mui/material'; import VaultCard from './VaultCard'; export default function VaultList({items,selectedId,onSelect}){return <Stack spacing={1}>{items.map(i=><VaultCard key={i.id} item={i} selected={selectedId===i.id} onClick={()=>onSelect(i)}/>)}</Stack>}

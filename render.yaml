@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: vaultora
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: REDIS_URL
+        fromService:
+          name: vaultora-rate-limits
+          type: keyvalue
+          property: connectionString
+
+  - type: keyvalue
+    name: vaultora-rate-limits
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []

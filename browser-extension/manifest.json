@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Vaultora Autofill",
+  "version": "0.2.0",
+  "description": "Locally unlock and fill Vaultora login credentials.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Vaultora"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://localhost:8081/*"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'none'"
+  }
+}

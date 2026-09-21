@@ -1,0 +1,1 @@
+import {Button} from '@mui/material'; import ContentCopyRounded from '@mui/icons-material/ContentCopyRounded'; import {useClipboardClear} from '../../hooks/useClipboardClear'; export default function CopySecretButton({value}){const copy=useClipboardClear();return <Button size="small" startIcon={<ContentCopyRounded/>} onClick={()=>copy(value)}>Copy</Button>}

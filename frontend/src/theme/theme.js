@@ -1,0 +1,1 @@
+import {createTheme} from '@mui/material/styles'; import {palette} from './palette'; export const theme=createTheme({palette,shape:{borderRadius:12},typography:{fontFamily:'Inter,system-ui,sans-serif'},components:{MuiButton:{defaultProps:{disableElevation:true},styleOverrides:{root:{textTransform:'none',fontWeight:700}}}}});

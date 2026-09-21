@@ -1,0 +1,1 @@
+import {Stack,Typography} from '@mui/material'; import SecuritySettings from './SecuritySettings'; import ProfileSettings from './ProfileSettings'; export default function SettingsPage(){return <Stack spacing={2} p={{xs:2,md:5}}><Typography variant="h4" fontWeight={800}>Settings</Typography><ProfileSettings/><SecuritySettings/></Stack>}

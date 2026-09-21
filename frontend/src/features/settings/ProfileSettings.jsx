@@ -1,0 +1,1 @@
+import {Paper,Typography} from '@mui/material'; import {useAuth} from '../../hooks/useAuth'; export default function ProfileSettings(){const{user}=useAuth();return <Paper sx={{p:2}}><Typography fontWeight={700}>Profile</Typography><Typography variant="body2" color="text.secondary">{user?.email}</Typography></Paper>}

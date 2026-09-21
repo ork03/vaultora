@@ -1,0 +1,1 @@
+import Alert from '@mui/material/Alert'; export default function AutoLockWarning(){return <Alert severity="info">Vault auto-locks after 5 minutes of inactivity and when the tab remains hidden.</Alert>}

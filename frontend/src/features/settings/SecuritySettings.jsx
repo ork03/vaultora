@@ -1,0 +1,1 @@
+import {Paper,Typography} from '@mui/material'; export default function SecuritySettings(){return <Paper sx={{p:2}}><Typography fontWeight={700}>Security</Typography><Typography variant="body2" color="text.secondary">Auto-lock: 5 minutes. Master-password recovery is intentionally unavailable.</Typography></Paper>}
