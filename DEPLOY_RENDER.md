@@ -30,7 +30,7 @@ Do not commit `.env`, MongoDB credentials, or any real JWT secret. The supplied 
 5. Keep the generated `JWT_SECRET`; do not replace it with a short or predictable value.
 6. Apply the Blueprint and wait for the first Docker deploy to finish.
 
-Open the generated `https://vaultora-<unique>.onrender.com` URL. It serves both the React interface and the API.
+Open the generated `https://vaultora-<unique>.onrender.com` URL. It serves both the React interface and the API. Render checks `/health` while deploying; it returns a small unauthenticated status response and does not expose account or vault data.
 
 ## 4. Production settings
 

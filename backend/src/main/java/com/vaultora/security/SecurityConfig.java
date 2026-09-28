@@ -54,7 +54,23 @@ public class SecurityConfig {
                     .requestMatcher(req -> Boolean.parseBoolean(
                         System.getProperty("vaultora.hsts", "false")))))
             .authorizeHttpRequests(a -> a
-                .requestMatchers("/api/auth/**", "/error").permitAll()
+                .requestMatchers(
+                    "/health",
+                    "/error",
+                    "/",
+                    "/index.html",
+                    "/assets/**",
+                    "/icon.svg",
+                    "/manifest.webmanifest",
+                    "/sw.js",
+                    "/login",
+                    "/register",
+                    "/unlock",
+                    "/vault",
+                    "/generator",
+                    "/settings",
+                    "/api/auth/**")
+                .permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated())
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
